@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Message field found:", messageField);
     console.log("Checkbox found:", joinCheckbox);
 
-    form.addEventListener("#contact-submit", function (event) {
+    form.addEventListener("submit", function (event) { // Change to "submit"
         console.log("Submit event triggered");
 
         const isMessageFilled = messageField.value.trim() !== "";
