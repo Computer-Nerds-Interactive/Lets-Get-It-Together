@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script loaded");
 
-    const form = document.querySelector("#contact-form"); // Replace with your form selector
-    const messageField = document.querySelector("#message-field"); // Replace with your message field selector
-    const joinCheckbox = document.querySelector("#join-interest-checkbox"); // Replace with your checkbox selector
+    const form = document.querySelector("#contact-form");
+    const messageField = document.querySelector("#message-field");
+    const joinCheckbox = document.querySelector("#join-interest-checkbox");
 
     if (!form || !messageField || !joinCheckbox) {
         console.error("One or more form elements were not found. Check your selectors.");
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Message field found:", messageField);
     console.log("Checkbox found:", joinCheckbox);
 
-    form.addEventListener("submit", function (event) { // Change to "submit"
+    form.addEventListener("submit", function (event) {
         console.log("Submit event triggered");
 
         const isMessageFilled = messageField.value.trim() !== "";
@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!isMessageFilled && !isCheckboxChecked) {
             console.warn("Validation failed: Neither field is filled.");
-            event.preventDefault(); // Stop the form from submitting
+            event.preventDefault(); // Prevent form submission
+            event.stopImmediatePropagation(); // Stop Webflow from processing the submit event
             alert("Please fill out the message field or check the join interest list box.");
         } else {
             console.log("Validation passed!");
