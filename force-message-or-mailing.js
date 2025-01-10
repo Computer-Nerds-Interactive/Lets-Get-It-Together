@@ -1,12 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script loaded");
 
-    const form = document.querySelector("#contact-form"); // Replace with your form selector
-    const messageField = document.querySelector("#message-field"); // Replace with your message field selector
-    const joinCheckbox = document.querySelector("#join-interest-checkbox"); // Replace with your checkbox selector
+    // Check if the document is fully loaded
+    const form = document.querySelector("#contact-form");
+    const messageField = document.querySelector("#message-field");
+    const joinCheckbox = document.querySelector("#join-interest-checkbox");
+
+    // Log the entire document to check if elements exist
+    console.log("Document body:", document.body);
 
     if (!form || !messageField || !joinCheckbox) {
         console.error("One or more form elements were not found. Check your selectors.");
+        if (!form) console.error("Form not found");
+        if (!messageField) console.error("Message field not found");
+        if (!joinCheckbox) console.error("Checkbox not found");
         return;
     }
 
@@ -14,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Message field found:", messageField);
     console.log("Checkbox found:", joinCheckbox);
 
-    form.addEventListener("submit", function (event) { // Change to "submit"
+    // Listen for form submit
+    form.addEventListener("submit", function (event) {
         console.log("Submit event triggered");
 
         const isMessageFilled = messageField.value.trim() !== "";
