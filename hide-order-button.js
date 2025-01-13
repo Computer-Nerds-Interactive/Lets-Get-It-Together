@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Loop through each instance of the .hide-content-and-order
   hideContentsAndOrder.forEach((hideContentButton) => {
     // Find the .book-component_wrapper inside the .hide-content-and-order
-    const bookComponentWrapper = hideContentButton.querySelector('.book-component_wrapper');
+    const bookComponentWrapper = hideContentButton.querySelector('.order-and-content_wrapper');
 
     // If .book-component_wrapper exists, hide it
     if (bookComponentWrapper) {
